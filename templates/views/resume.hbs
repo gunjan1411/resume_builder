@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="box">
+                    <h1 class="subtitle is-3 has-text-centered">{{ first_name }} {{ lastname }}</h1>
+                    
+                    <div class="content">
+                        <p><strong>Firstname:</strong> {{ first_name }} <span id="display_firstname"></span></p>
+                        <p><strong>Lastname:</strong> {{ lastname }} <span id="display_lastname"></span></p>
+                        <p><strong>Position:</strong> {{ position }} <span id="display_position"></span></p>
+                        <p><strong>Email:</strong> {{ email }} <span id="display_email"></span></p>
+                        <p><strong>Mobile number:</strong> {{ number }} <span id="display_number"></span></p>
+                        <p><strong>Address:</strong> {{ address }} <span id="display_address"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

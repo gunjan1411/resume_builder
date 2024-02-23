@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resister.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <script>
+        function myfun() {
+
+            var coorect_way = /^[A-Za-z]+$/;
+            var a = document.getElementById("user_name").value;
+
+            if (a == "") {
+                document.getElementById("message").innerHTML = "****plz fill";
+                return false;
+            }
+            if (a.length < 3) {
+                document.getElementById("message").innerHTML = "****username must be 3 char";
+                return false;
+            }
+            if (a.length > 20) {
+                document.getElementById("message").innerHTML = "****username must be 20 char";
+                return false;
+            }
+            else if (!a.match(coorect_way)) {
+                document.getElementById("message").innerHTML = "****only alfa are allowed";
+                return false;
+            }
+            //===================================================================================
+            var surname = document.getElementById("message_surname").value;
+
+            if (surname == "") {
+                document.getElementById("message_sur").innerHTML = "****plz fill";
+                return false;
+            }
+            if (surname.length < 3) {
+                document.getElementById("message_sur").innerHTML = "****username must be 3 char";
+                return false;
+            }
+            if (surname.length > 20) {
+                document.getElementById("message_sur").innerHTML = "****username must be 20 char";
+                return false;
+            }
+            else if (!surname.match(coorect_way)) {
+                document.getElementById("message_sur").innerHTML = "****only alfa are allowed";
+                return false;
+            }
+
+
+            var b = document.getElementById("passwords").value;
+            var c = document.getElementById("passwordsc").value;
+
+
+            if (b == "") {
+                document.getElementById("message1").innerHTML = "****fill broo";
+                return false;
+            }
+            if (b.length < 5) {
+                document.getElementById("message1").innerHTML = "****lenght must be in 5 to 20";
+                return false;
+            }
+            if (b.length > 20) {
+                document.getElementById("message1").innerHTML = "****lenght must be in 5 to 20";
+                return false;
+            }
+            if (b != c) {
+                document.getElementById("message1").innerHTML = "****not match broo";
+                return false;
+            }
+
+            var d = document.getElementById("email").value;
+
+            if (d.indexOf('@') <= 0) {
+                document.getElementById("message2").innerHTML = "****wrong @";
+                return false;
+            }
+            if ((d.charAt(d.length - 4) != '.') && (d.charAt(d.length - 3) != '.')) {
+                document.getElementById("message2").innerHTML = "****invalid . position";
+                return false;
+            }
+        }
+    </script>
+    <div class="main section">
+        <form action="/resisters" onsubmit="return myfun()" method="POST" class="box">
+            <div class="field">
+                <label class="label">Username:</label>
+                <div class="control">
+                    <input type="text" id="user_name" name="username" class="input" placeholder="Enter your username">
+                    <span id="message"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Surname:</label>
+                <div class="control">
+                    <input type="text" name="surname" id="message_surname" class="input"
+                        placeholder="Enter your surname">
+                    <span id="message_sur"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Password:</label>
+                <div class="control">
+                    <input type="password" name="password" id="passwords" class="input"
+                        placeholder="Enter your password">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Confirm password:</label>
+                <div class="control">
+                    <input type="password" name="confirm_password" id="passwordsc" class="input"
+                        placeholder="Confirm your password">
+                    <span id="message1"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email:</label>
+                <div class="control">
+                    <input type="email" name="email" id="email" class="input" placeholder="Enter your email">
+                    <span id="message2"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Mobile number:</label>
+                <div class="control">
+                    <input type="text" name="number" id="num" class="input" placeholder="Enter your mobile number">
+                    <span id="message3"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input type="submit" value="Submit" class="button is-primary">
+                </div>
+            </div>
+        </form>
+        <h3 class="subtitle is-3">OR Already Have Account? Then <a href="http://localhost:3030/login#">LOG IN</a></h3>
+    </div>
+
+
+</body>
+
+</html>

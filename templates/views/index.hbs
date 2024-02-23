@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <script>
+        function myfun() {
+
+            var first_name = document.getElementById("first_name").value;
+            var lastname = document.getElementById("lastname").value;
+            var position = document.getElementById("position").value;
+            var email = document.getElementById("email").value;
+            var number = document.getElementById("number").value;
+            var address = document.getElementById("address").value;
+
+            const body = {
+                first_name: first_name,
+                lastname: lastname,
+                position: position,
+                email: email,
+                number: number,
+                address: address
+            }
+
+            console.log("Response : ", data);
+
+             $.ajax({
+                 type: "POST",
+                 url: "localhost:3030/index",
+                 data: body,
+                 success: function (data) {
+                     console.log(data);
+                 }
+
+
+            });
+
+
+        }
+    </script>
+    <h1 class="subtitle is-1 has-text-centered mt-6 has-background-success has-text-white p-4 rounded">
+        Just Fill The Following Information And Get Your Resume
+    </h1>
+
+    <h3 class="subtitle is-3 has-text-centered mt-6 has-background-warning">Basic Information</h3>
+    <div class="main section">
+        <form onsubmit="return myfun()" method="POST" class="box" id="myForm">
+            <div class="field">
+                <label class="label">Firstname:</label>
+                <div class="control">
+                    <input type="text" id="user_name" name="first_name" class="input" placeholder="Enter your username">
+                    <span id="first_namem"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">lastname:</label>
+                <div class="control">
+                    <input type="text" name="lastname" id="message_surname" class="input"
+                        placeholder="Enter your surname">
+                    <span id="lastnamem"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Position:</label>
+                <div class="control">
+                    <input type="text" name="position" id="position" class="input" placeholder="Enter your surname">
+                    <span id="positionm"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email:</label>
+                <div class="control">
+                    <input type="email" name="email" id="email" class="input" placeholder="Enter your email">
+                    <span id="emailm"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Mobile number:</label>
+                <div class="control">
+                    <input type="text" name="number" id="num" class="input" placeholder="Enter your mobile number">
+                    <span id="numberm"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Address:</label>
+                <div class="control">
+                    <input type="text" name="address" id="add" class="input" placeholder="Enter your address">
+                    <span id="addressm"></span>
+                </div>
+            </div>
+            <h3 class="subtitle is-3 has-text-centered mt-6 has-background-warning">Education</h3>
+
+
+            <div class="field">
+                <label class="label">Domain:</label>
+                <div class="control">
+                    <input type="text" name="Domain" id="Domainid" class="input" placeholder="Enter your surname">
+                    <span id="Domainm"></span>
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Collage:</label>
+                <div class="control">
+                    <input type="text" name="Collage" id="Collageid" class="input" placeholder="Enter your surname">
+                    <span id="Collagem"></span>
+                </div>
+            </div>
+
+            <h3 class="subtitle is-3 has-text-centered mt-6 has-background-warning">Skills</h3>
+
+            <div class="control">
+                <input type="text" name="Skills" id="Skillsid" class="input" placeholder="Enter your surname">
+                <span id="Skillsm"></span>
+            </div>
+
+            <h3 class="subtitle is-3 has-text-centered mt-6 has-background-warning">Projects</h3>
+
+            <div class="field">
+                <label class="label">Project Name1:</label>
+                <div class="control">
+                    <input type="text" name="Project_Name1" id="Project_Name1id" class="input"
+                        placeholder="Enter your surname">
+                    <span id="Project_Name1m"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Detailes1:</label>
+                <div class="control">
+                    <input type="text" name="Detailes1" id="Detailes1id" class="input" placeholder="Enter your surname">
+                    <span id="Detailes1m"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Project Name2:</label>
+                <div class="control">
+                    <input type="text" name="Project_Name2" id="Project_Name2id" class="input"
+                        placeholder="Enter your surname">
+                    <span id="Project_Name2m"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Detailes2:</label>
+                <div class="control">
+                    <input type="text" name="Detailes2" id="Detailes2id" class="input" placeholder="Enter your surname">
+                    <span id="Detailes2m"></span>
+                </div>
+            </div>
+
+            <h3 class="subtitle is-3 has-text-centered mt-6 has-background-warning">Languages</h3>
+
+
+            <div class="field has-text-centered">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" name="language" value="English">
+                        English
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="language" value="Spanish">
+                        Gujarati
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="language" value="French">
+                        Hindi
+                    </label>
+                    <!--Add more checkboxes as needed -->
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input type="submit" value="Submit" class="button is-primary" onclick=myfun()>
+                </div>
+            </div>
+
+        </form>
+        <h4 class="subtitle is-4"> Thank You!! Have A Great Day </h4>
+    </div>
+
+</body>
+
+</html>
